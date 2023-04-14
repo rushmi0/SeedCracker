@@ -57,5 +57,4 @@ if __name__ == "__main__":
     target = "zpub6nhhoBvkc6pNgU3JPwobardNLniafeTGnBkxrw8XLv3DeB24W2ycBD68dNciURmdUdqkbggGRCsSNCHg6UJCnYy4tA1GKMa1ZcRGK4Rpjth"
     mkdir = '/home/rushmi0/.electrum/electrum_wallet/'
     os.makedirs(mkdir, exist_ok=True)
-
     main()
