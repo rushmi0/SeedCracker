@@ -51,7 +51,7 @@ def check_target(phrase):
 
 
 def main():
-    thread = 8
+    thread = 5
     with Pool(thread) as pool:
         seed_phrases = brute_force(BIP39.WORDLIST)
         results = pool.imap_unordered(check_target, enumerate(seed_phrases))
