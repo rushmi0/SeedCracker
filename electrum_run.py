@@ -18,7 +18,7 @@ class ElectrumScanner:
                 for word7 in wordlist)
 
     def check_target(self, phrase):
-        wallet_path = f"/home/rushmi0/.electrum/electrum_wallet/account_{phrase[0]}.json"
+        wallet_path = f"/home/username/.electrum/electrum_wallet/account_{phrase[0]}.json"
         result = subprocess.run(["electrum", "restore", "-w", wallet_path, phrase[1]],
                                 capture_output=True, text=True)
         if result.returncode != 0:
@@ -31,7 +31,7 @@ class ElectrumScanner:
         master_target = data["keystore"]["xpub"]
 
         if self.target == master_target:
-            with io.open("/home/rushmi0/.electrum/ビットコイン.txt", "a") as f:
+            with io.open("/home/username/.electrum/myXpub.txt", "a") as f:
                 f.write(f"{phrase[0] + 1} | {mnemonic}\n")
                 f.write(f"{phrase[0] + 1} | {master_target}\n\n")
             print(f"found matching target in {wallet_path}")
@@ -54,7 +54,7 @@ class ElectrumScanner:
         print(result)
 
         self.target = "zpub6nhhoBvkc6pNgU3JPwobardNLniafeTGnBkxrw8XLv3DeB24W2ycBD68dNciURmdUdqkbggGRCsSNCHg6UJCnYy4tA1GKMa1ZcRGK4Rpjth"
-        mkdir = '/home/rushmi0/.electrum/electrum_wallet/'
+        mkdir = '/home/username/.electrum/electrum_wallet/'
         os.makedirs(mkdir, exist_ok=True)
 
         self.main()
