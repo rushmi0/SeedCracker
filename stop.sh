@@ -1,0 +1,2 @@
+#หยุดการทำงาน Electrum
+electrum stop
